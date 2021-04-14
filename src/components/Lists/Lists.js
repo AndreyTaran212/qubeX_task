@@ -46,13 +46,23 @@ function Lists({hasInnerList}) {
     setLists(newListsUp)
   };
 
-  return (
-    <>
-      <ListForm onSubmit={addList}/>
-      <List lists={lists} removeList={removeList} updateList={updateList} listUp={listUp} listDown={listDown} />
-    </>
-  );
+if (hasInnerList) {
+    return (
+      <>
+        <ListForm onSubmit={addList} />
+        <List
+          lists={lists}
+          removeList={removeList}
+          updateList={updateList}
+          listUp={listUp}
+          listDown={listDown}
+        />
+      </>
+    );
+  }
+  return null;
 }
 
 export default Lists;
 
+Lists.defaultProps = { hasInnerList: true };
