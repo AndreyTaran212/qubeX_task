@@ -5,9 +5,9 @@ function ListForm({edit, onSubmit}) {
 
   const inputRef = useRef(null);
 
-  //useEffect(() => {
-  //  inputRef.current.focus();
-  //});
+  useEffect(() => {
+    inputRef.current.focus();
+  });
 
   const handleChange = e => {
     setInput(e.target.value);
